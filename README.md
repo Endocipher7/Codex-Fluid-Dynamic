@@ -1,26 +1,39 @@
-# Codex Fluid Dynamic
+# Codex-Fluid-Dynamic
 
-A prototype multi-layer simulation and visualization stack for a fluidic, ion-projection, and holographic display system.
+A multi-layer scientific prototype for hybrid fluid dynamics, ion field projection, material response modeling, and holographic visualization.
 
-## Overview
+## Project concept
 
-This project combines:
-- a simplified fluid simulation layer
-- an ion field projection model
-- a material optical response model
-- a renderer for visualization
-
-This is a science-leaning prototype designed to be extended with more physically accurate numerical methods and hardware control logic.
-
-## Live concept
-
-The repository is structured around a multi-layer system inspired by the following conceptual stack:
+This repository is organized into five conceptual layers:
 
 1. Sensing Layer
+   - external motion sensing and spectral calibration inputs
+   - signal normalization and environmental recombination
+
 2. Material Layer
+   - mesoporous silica membrane models
+   - anisotropic optical response and thermal behaviors
+
 3. Ion Field Layer
+   - confined ion-field projection and charge density modeling
+   - waveform and dynamic-emission approximation
+
 4. Simulation Layer
+   - simplified Navier-Stokes-inspired flow field
+   - coupled advection and diffusion model
+
 5. Display Layer
+   - holographic projection and visualization rendering
+   - scene synthesis from simulation fields
+
+## Structure
+
+- `codex-fluid/` — fluid and flow modeling modules
+- `ion-storage/` — ion field and particle projection logic
+- `materials/` — material and optical response simulation
+- `display/` — holographic rendering and visualization
+- `src/codex_fluid_dynamic/` — Python package prototype for the simulation stack
+- `app.py` — runner for the demo pipeline
 
 ## Quick start
 
@@ -31,21 +44,21 @@ pip install -r requirements.txt
 python app.py
 ```
 
-The script writes a rendered output to `output/scene.png`.
+This produces a rendered composite visualization in `output/scene.png`.
 
-## Repository structure
+## Current implementation status
 
-- `src/codex_fluid_dynamic/fluid.py` - fluid simulation
-- `src/codex_fluid_dynamic/ion_field.py` - ion projection model
-- `src/codex_fluid_dynamic/materials.py` - material properties and optical response
-- `src/codex_fluid_dynamic/display.py` - visualization
-- `app.py` - demo entrypoint
+The repository now includes:
+- a basic fluid field simulation
+- a simplified ion-field particle model
+- a material optical response approximation
+- a holographic-style visualization renderer
+- a modular architecture that can be expanded into real scientific or hardware-driven models
 
-## Extending the project
+## Recommended next milestones
 
-Suggested next steps:
-- replace the simplified fluid solver with a higher-order CFD model
-- connect ion field projection to a real hardware control layer
-- integrate ARTIQ pulse sequence logic
-- add a web app or interactive dashboard for live simulation
-- generate animation frames for an immersive holographic display preview
+- integrate a true CFD solver or spectral method
+- replace the simplified ion model with a more physically realistic confinement model
+- connect material response to measured DSC/XRD or POM datasets
+- add a browser-based live visualization dashboard
+- expose simulation controls and tuning parameters through an API or UI
